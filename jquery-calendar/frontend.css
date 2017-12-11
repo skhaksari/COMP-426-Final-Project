@@ -1,0 +1,16 @@
+h1 {
+    font-family: fantasy;
+    font-size: 30px;
+    
+}
+
+.calendar {
+    width: 800px;
+    height: 600px;
+    margin-left: 300px;
+}
+
+#calendar-events {
+    width: 200px;
+    height: 150px;
+}
