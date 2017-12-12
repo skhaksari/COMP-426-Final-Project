@@ -8,7 +8,7 @@
 	<style type="text/css" media="screen">
 		#calendar-events{ display: none; }
 	</style>
-	<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
 	<script src="scripts/calendar.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
