@@ -17,6 +17,8 @@
 	<p></p>
 	<?php echo draw_calendar(12,2017); ?>
 	<div id="calendar-events">
-    </div>	
+    </div>
+    <p id="output">
+    </p>
 </body>
 </html>
