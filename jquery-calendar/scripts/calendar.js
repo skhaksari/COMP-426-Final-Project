@@ -22,7 +22,7 @@ jQuery(document).ready(function($){
                         for (var i=0; i<data.length; i++) {
                             console.log(data[i]);
                             $("#output").append(data[i].rid + " ");
-                            $("#output").append("$" + data[i].price + " " + "<br>");
+                            $("#output").append("$" + data[i].price + " ");
 			
                         }
                     }
