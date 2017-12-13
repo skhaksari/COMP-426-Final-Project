@@ -4,60 +4,144 @@ jQuery(document).ready(function($){
     var remoteUrl = 'backend.php';
     var url_base = "https://wwwp.cs.unc.edu/Courses/comp426-f17/users/raveena/FinalProject/jquery-calendar/";
 
-    //Initialize the HTTP cache
-    var remoteCache = new Array();
-    var newDate = "2017-12-15";
+  
     //For each link in the calendar...
-    $('table.calendar button').each(function(i,item){
+    
+        var monthArray = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        var month = 12;
+        var year = 2017;
+        $("#dayHeading").html("<h2>" + monthArray[month-1] + " " + year + "</h2>");
+        var myMonth = JSON.stringify(month);
+        var myYear = JSON.stringify(year);
+        $.ajax(url_base + "includes/calendar.php",
+               {type: "GET",
+               dataType: "json",
+               data: { months : myMonth, year : myYear },
+               success: function(data) {
+                    $("#calendar").html("");
+                   $("#calendar").html(data);
+                    $('table.calendar button').each(function(i,item){
 
-        $(this).click(function(){
-            var myDate = JSON.stringify(item.id);
-            $.ajax(url_base + "dateHandler.php",
-                   {type: "GET",
-                    dataType: "json",
-                    data: { date : myDate },
-                    success: function(data) {
-			$("#output").html("");
-                        $("#output").append("Tickets available on " + item.id + "<br>");
-                        for (var i=0; i<data.length; i++) {
-                            console.log(data[i]);
-                            $("#output").append(data[i].rid + " ");
-                            $("#output").append("$" + data[i].price + " ");
-			
-                        }
-                    }
-                   });
-        });
+                        $(this).click(function(){
+                            var myDate = JSON.stringify(item.id);
+                            $.ajax(url_base + "dateHandler.php",
+                                    {type: "GET",
+                                    dataType: "json",
+                                    data: { date : myDate },
+                                    success: function(data) {
+                                        $("#output").html("");
+                                        $("#output").append("Tickets available on " + item.id + "<br>");
+                                        for (var i=0; i<data.length; i++) {
+                                            console.log(data[i]);
+                                            $("#output").append(data[i].rid + " ");
+                                            $("#output").append("$" + data[i].price + " "); 
+                                        }
+                                    }
+                                    });
+                        });
     });
+               }}
+              
+        );
+    
+    $("#nextMonth").click(function () {
+        if(year===2017 && month===12 || year < 2020 && year > 2017) {
+        if(month === 12) {
+          month=1;
+          year++;
+        } else {
+            month++;
+        }
+        $("#dayHeading").html("<h2>" + monthArray[month-1] + " " + year + "</h2>");
+        var myMonth = JSON.stringify(month);
+        var myYear = JSON.stringify(year);
+        $.ajax(url_base + "includes/calendar.php",
+               {type: "GET",
+               dataType: "json",
+               data: { months : myMonth, year : myYear },
+               success: function(data) {
+                    $("#calendar").html("");
+                   $("#calendar").html(data);
+                    $('table.calendar button').each(function(i,item){
+
+                        $(this).click(function(){
+                            var myDate = JSON.stringify(item.id);
+                            $.ajax(url_base + "dateHandler.php",
+                                    {type: "GET",
+                                    dataType: "json",
+                                    data: { date : myDate },
+                                    success: function(data) {
+                                        $("#output").html("");
+                                        $("#output").append("Tickets available on " + item.id + "<br>");
+                                        for (var i=0; i<data.length; i++) {
+                                            console.log(data[i]);
+                                            $("#output").append(data[i].rid + " ");
+                                            $("#output").append("$" + data[i].price + " "); 
+                                        }
+                                    }
+                                    });
+                        });
+    });
+               }}
+              
+        );
+        }
+    });
+    
+    $("#previousMonth").click(function () {
+        if(year==2018 && month===1 || year > 2017 && year < 2020) {
+        if(month === 1) {
+          month=12;
+          year--;
+        } else {
+            month--;
+        }
+        $("#dayHeading").html("<h2>" + monthArray[month-1] + " " + year + "</h2>");
+        var myMonth = JSON.stringify(month);
+        var myYear = JSON.stringify(year);
+        $.ajax(url_base + "includes/calendar.php",
+               {type: "GET",
+               dataType: "json",
+               data: { months : myMonth, year : myYear },
+               success: function(data) {
+                    $("#calendar").html("");
+                   $("#calendar").html(data);
+                    $('table.calendar button').each(function(i,item){
+
+                        $(this).click(function(){
+                            var myDate = JSON.stringify(item.id);
+                            $.ajax(url_base + "dateHandler.php",
+                                    {type: "GET",
+                                    dataType: "json",
+                                    data: { date : myDate },
+                                    success: function(data) {
+                                        $("#output").html("");
+                                        $("#output").append("Tickets available on " + item.id + "<br>");
+                                        for (var i=0; i<data.length; i++) {
+                                            console.log(data[i]);
+                                            $("#output").append(data[i].rid + " ");
+                                            $("#output").append("$" + data[i].price + " "); 
+                                        }
+                                    }
+                                    });
+                        });
+    });
+               }}
+              
+        );
+        }
+    });  
 
 });
 
 
-var load_tickets = function(ticket_item) { 
+
+
+
+
+
+
     
-    //setTimeout(function(){ alert(ticket_item); }, 500);
-};
 
 
-/*			var calendarEvents = $('#calendar-events');			
-			calendarEvents.slideUp('fast',function(){			
-				if( remoteCache[linkId] != undefined ) { 
-					calendarEvents.html(remoteCache[linkId]);
-					calendarEvents.slideDown('fast');
-				} else {
-					calendarEvents.load(linkUrl,function(){
-						remoteCache[linkId] = calendarEvents.html();
-						calendarEvents.slideDown('fast');
-					});
-				}
-			});
-			return false;
 
-            		//Unique ID for the link
-/*		var linkId = item.id;
-
-		//Unique URL for the link
-		var linkUrl = remoteUrl+'?timestamp='+linkId;
-
-		//Attach onclick event handler
-*/
