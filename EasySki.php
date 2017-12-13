@@ -1,4 +1,4 @@
-<?php include('jquery-calendar/includes/calendar.php'); ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -108,12 +108,17 @@
             </div>
             </div>
         </div>
-        <h2>December 2017</h2>
+        <div id="dayHeading">
+        </div>
 	   <p></p>
-	   <?php echo draw_calendar(12,2017); ?>
-	   <div id="calendar-events">
+        <button id="previousMonth">Previous Month</button>
+        <button id="nextMonth">Next Month</button>
+        <div id="calendar">
+        </div>
+        <div id="calendar-events">
         </div>
         <div id="output">
+            
         </div>
         <div class="col sm-4 offset-md-8">
             <iframe src="https://www.google.com/maps/d/embed?mid=1LtgLYclPJ1onQFSyNLP7Rf-lijW41Snw" width="450" height="450"></iframe>
