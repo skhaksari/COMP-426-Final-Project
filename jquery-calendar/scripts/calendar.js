@@ -8,7 +8,7 @@ jQuery(document).ready(function($){
     var remoteCache = new Array();
     var newDate = "2017-12-15";
     //For each link in the calendar...
-    $('table.calendar a').each(function(i,item){
+    $('table.calendar button').each(function(i,item){
 
         $(this).click(function(){
             var myDate = JSON.stringify(item.id);
