@@ -17,9 +17,13 @@ jQuery(document).ready(function($){
                     dataType: "json",
                     data: { date : myDate },
                     success: function(data) {
+			$("#output").html("");
+                        $("#output").append("Tickets available on " + item.id + "<br>");
                         for (var i=0; i<data.length; i++) {
                             console.log(data[i]);
-                            load_tickets(data[i]);
+                            $("#output").append(data[i].rid + " ");
+                            $("#output").append("$" + data[i].price + " " + "<br>");
+			
                         }
                     }
                    });
@@ -30,7 +34,7 @@ jQuery(document).ready(function($){
 
 
 var load_tickets = function(ticket_item) { 
-    console.log(ticket_item);
+    
     //setTimeout(function(){ alert(ticket_item); }, 500);
 };
 
