@@ -11,8 +11,14 @@
  *
  * I added lines 47 - 56 to add a unique id to each hyperlink for each day.
  */
-function draw_calendar($month,$year){
 
+
+header("Content type");
+$month_obj = json_decode($_GET["months"], false);
+$year_obj = json_decode($_GET["year"], false);
+
+draw_calendar($month_obj,$year_obj);
+function draw_calendar($month,$year){
 	/* draw table */
 	$calendar = '<table cellpadding="0" cellspacing="0" class="calendar">';
 
@@ -82,6 +88,8 @@ function draw_calendar($month,$year){
 	$calendar.= '</table>';
 	
 	/* all done, return result */
-	return $calendar;
+	echo json_encode($calendar);
+    
 }
+
 ?>
