@@ -32,11 +32,13 @@ if (isset($_POST['register'])) {
     $mypassword1=$_POST['pass1'];
     $mypassword2=$_POST['pass2'];
 
-    $myusername = mysql_real_escape_string($myusername);
-    $myemail = mysql_real_escape_string($myemail);
-    $mypassword1 = mysql_real_escape_string($mypassword1);
-    $mypassword2 = mysql_real_escape_string($mypassword2);
-
+    /*
+    $myusername = mysqli_real_escape_string($myusername);
+    $myemail = mysqli_real_escape_string($myemail);
+    $mypassword1 = mysqli_real_escape_string($mypassword1);
+    $mypassword2 = mysqli_real_escape_string($mypassword2);
+    */
+    
     if (empty($myusername)) { 
         array_push($errors, "Username is required"); 
     }
@@ -46,22 +48,22 @@ if (isset($_POST['register'])) {
     if (empty($mypassword1)) { 
         array_push($errors, "Password is required"); 
     }
-    if ($password_1 != $mypassword2) {
+    if ($mypassword1 != $mypassword2) {
         array_push($errors, "The two passwords do not match");
     }
 
     // If result matched, table row must be 1 row
     if(count($errors==0)){
         //encrypt the password before saving in the database
-        $password = md5($mypassword1);
+        $mypassword = md5($mypassword1);
         // we can change the attriubtes here as needed
-        $sql = "INSERT INTO users (username, email, password) 
+        $sql = "INSERT INTO Users (user, email, pass) 
   			  VALUES('$myusername', '$myemail', '$mypassword')";
         $conn->query($sql);
         $_SESSION['username'] = $myusername;
         $_SESSION['success'] = "You are now logged in";
         // we can change this as needed
-        header('location: EasySki.html');
+        header('location: ../EasySki.html');
     } else {
         echo "Invaild Username or Password";
     }
@@ -77,11 +79,11 @@ if (isset($_POST['register'])) {
  *  message. Redirects to EasySki.php
  */ 
 if (isset($_POST['login'])) {
-
     $username=$_POST['user'];
     $password=$_POST['pass'];
-    $username = mysql_real_escape_string($username);
-    $password = mysql_real_escape_string($password);
+    
+    //    $username = mysql_real_escape_string($username);
+    //    $password = mysql_real_escape_string($password);
 
     if (empty($username)) {
         array_push($errors, "Username is required");
@@ -89,16 +91,16 @@ if (isset($_POST['login'])) {
     if (empty($password)) {
         array_push($errors, "Password is required");
     }
-
+    
     if (count($errors) == 0) {
         $password = md5($password);
-        $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+        $sql = "SELECT * FROM Users WHERE user='$username' AND pass='$password'";
         $results = $conn->query($sql);
         if (mysqli_num_rows($results) == 1) {
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "You are now logged in";
-            header('location: EasySki.php');
-        }else {
+            header('location: ../EasySki.html');
+        } else {
             array_push($errors, "Wrong username/password combination");
         }
     }
