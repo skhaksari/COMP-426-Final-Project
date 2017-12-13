@@ -2,7 +2,7 @@ jQuery(document).ready(function($){
 
     //CHANGE ME!!! Define the relative or absolute path to your backend script
     var remoteUrl = 'backend.php';
-    var url_base = "https://wwwp.cs.unc.edu/Courses/comp426-f17/users/carter4/EasySki/";
+    var url_base = "https://wwwp.cs.unc.edu/Courses/comp426-f17/users/raveena/FinalProject/jquery-calendar/";
 
     //Initialize the HTTP cache
     var remoteCache = new Array();
