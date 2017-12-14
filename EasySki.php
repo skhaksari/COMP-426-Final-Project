@@ -37,7 +37,7 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <button class="btn btn-primary btn-outline-success my-2 my-sm-0" id="signInButton" data-target="#signInFloat">Sign In/Sign Up</button>
+                    <a class="btn btn-primary" href="Login.php">Log In</a>
                 </form>
             </div>
         </nav>
