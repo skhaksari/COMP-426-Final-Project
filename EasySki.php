@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <link rel="stylesheet" href="EasySki.css">
         <script src="EasySki.js"></script>
-        <script src="jquery-calendar/Scripts/Calendar.js"></script>
+        <script src="jquery-calendar/scripts/calendar.js"></script>
     </head>
     <body>
         <!-- Navigation of the Site -->
