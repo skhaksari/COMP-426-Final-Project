@@ -47,32 +47,59 @@
                 </form>
             </div>
         </nav>
-        <div class="col-sm-6 col-lg-14" id="resort_display">
-            <div class="container">
+	<div class="row">
+		<div class="container">
+                	<div class="row">
+                    		<div class="col-lg-3">
+                        		<div class="input-group">           
+                           			 <input id="autocomplete" type="text" class="form-control" placeholder="Location">
+                        		</div>
+                    		</div>
+                    		<div class="col-lg-3">
+                        		<div class="input-group">           
+                            			<input id="start_date" type="date" class="form-control">
+                        		</div>
+                    		</div>
+                    		<div class="col-lg-3">
+                        		<div class="input-group">
+                            			<input id="end_date" type="date" class="form-control">
+                        	</div>
+                    	</div>
+                </div>
+		
+        </div>
+        <div class="col-lg-5" id="resort_display">
             <div class="row">
-                <div class="col-lg-3">
-                    <label for="start_date">Location</label>
-                    <div class="input-group">           
-                        <input id="autocomplete" type="text" class="form-control">
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-header">
+                       <button class="btn btn-primary-outline" id="favorite">&#x2606;</button>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title"></p>
+                        <p class="card-text"></p>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <label for="start_date">Check-In</label>
-                    <div class="input-group">           
-                        <input id="start_date" type="date" class="form-control">
+            </div>
+            <div class="col-sm-4" offset="">
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-primary-outline" id="favorite">&#x2606;</button>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title"></p>
+                        <p class="card-text"></p>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <label for="start_date">Check-Out</label>
-                    <div class="input-group">
-                        <input id="end_date" type="date" class="form-control">
+            </div>
+            <div class="col-sm-4" offset="">
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-primary-outline" id="favorite">&#x2606;</button>
                     </div>
-                </div>
-                <div class="col-lg-1"></div>
-                <div class="form-check">
-                    <label class="near_me">Near Me</label>
-                    <div class="input-group">
-                        <input class="form-check-input" type="checkbox" value="">
+                    <div class="card-body">
+                        <p class="card-title"></p>
+                        <p class="card-text"></p>
                     </div>
                 </div>
             </div>
