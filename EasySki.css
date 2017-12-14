@@ -1,7 +1,7 @@
 
 .navbar-custom
 {
-    background-color: #1629b6;
+    background-color: lightseagreen;
 }
 .navbar .navbar-brand 
 {
@@ -32,22 +32,80 @@
     width: 500px;
     height: 500px;
 }
+
+.input-group {
+    margin-top: 18px;
+    margin-left: 250px;
+}
+
 .row
 {
   margin-top: 0px;
   margin-bottom: 30px
 }
+
+.map {
+    margin-left: -190px;
+    margin-top: 150px;
+}
+
+
 .Location
 {
     font-size:2px;
 }
 .calendar
 {
+    position: sticky;
     height: 120px;
-    width: 600px;
+    width: 620px;
+    margin-left: 100px;
+    margin-top: -32px;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn {
+    text-decoration: none;
+}
+
+h2 {
+    margin-top: -5px;
+    font-size: 27px;
+}
+
+h5 {
+    margin-right: 10px;
+    margin-top: 5px;
 }
 #favorite 
 {
     color: yellow;
     background: #1629b6;
+}
+
+#submit {
+    margin-right: -40px;
+    margin-left: 7px;
+    width: 100px;
+}
+
+
+
+
+div.resorts, .mySavedTickets {
+    display: inline-block;
+    width: 100px;
+    height: 120px;
+    margin: 0 .5em .5em 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: Arial, sans-serif;
+    position: relative;
+    background-color: #1629b6;
+    vertical-align: middle;
+    color: white;
 }
