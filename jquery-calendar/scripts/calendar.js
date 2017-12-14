@@ -4,6 +4,18 @@ jQuery(document).ready(function($){
     var remoteUrl = 'backend.php';
     var url_base = "https://wwwp.cs.unc.edu/Courses/comp426-f17/users/raveena/FinalProject/jquery-calendar/";
 
+    var ui_price_display = $("<div class='price_display'>Price Display</div>");
+    $(price_div).append(ui_price_display);
+
+    var priceUpdate = function(tickets) {
+        ui_price_display.empty();
+        for (var i=0; i<tickets.length; i++) {
+            console.log(tickets[i]);
+            console.log(tickets[i].tid);
+            $(ui_price_display).append($("<div class='resorts "+tickets[i].rid+"'>"+tickets[i].rid+"<br>$"+tickets[i].price+"<br>"+tickets[i].tid+"</div>"));
+        }
+        $(price_div).append(ui_price_display);
+    }
   
     //For each link in the calendar...
      $("#submit").click( function() {
@@ -72,13 +84,7 @@ jQuery(document).ready(function($){
                                     dataType: "json",
                                     data: { date : myDate },
                                     success: function(data) {
-                                        $("#output").html("");
-                                        $("#output").append("Tickets available on " + item.id + "<br>");
-                                        for (var i=0; i<data.length; i++) {
-                                            console.log(data[i]);
-                                            $("#output").append(data[i].rid + " ");
-                                            $("#output").append("$" + data[i].price + " "); 
-                                        }
+                                       priceUpdate(data);
                                     }
                                     });
                         });
