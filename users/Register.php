@@ -22,18 +22,9 @@
                     <li class="nav-item" data-target="#signInFloat">
                         <a class="nav-link" href="#" data-target="#signInFloat">Favorites</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <button class="btn btn-primary btn-outline-success my-2 my-sm-0" id="signInButton" data-target="#signInFloat">Sign In/Sign Up</button>
+                    <a class="btn btn-primary" href="Login.php">Log In</a>
                 </form>
             </div>
     </nav>
@@ -108,7 +99,7 @@ EasySki.html . -->
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                     <button type="submit" class="btn btn-success" name="register"><i class="fa fa-user-plus"></i>Register</button>
-                    <a class="btn btn-link" href="login.php">Already a member? Sign In</a>
+                    <a class="btn btn-link" href="Login.php">Already a member? Sign In</a>
                 </div>
         </div>
     </form>
