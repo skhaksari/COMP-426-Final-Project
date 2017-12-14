@@ -57,9 +57,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="input-group">
-                            <input id="end_date" type="date" class="form-control">
-                        </div>
+                   
                     </div>
                 </div>
             </div>
