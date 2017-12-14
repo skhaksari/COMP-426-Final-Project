@@ -1,0 +1,20 @@
+Tickets
+
+    id INT, Primary Key
+    resort_id INT, foreign key references Resorts(id)
+    date_id INT, foreign key references Dates(id)
+    price INT
+
+
+Resorts
+
+    id INT, Primary key
+    name VARCHAR(25)
+    address VARCHAR(25)
+    stars INT
+    
+    
+Dates
+
+    id INT, primary key
+    date date
