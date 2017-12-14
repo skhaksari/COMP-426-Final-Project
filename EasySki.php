@@ -180,6 +180,7 @@
             <iframe src="https://www.google.com/maps/d/embed?mid=1LtgLYclPJ1onQFSyNLP7Rf-lijW41Snw" width="450" height="450"></iframe>
         </div>
         </div>
+        <div id="price_div">Price Div</div>
         <!-- Modal Box for Login/Signup -->
         <div class="modal fade" id="signInFloat" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
