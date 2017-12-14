@@ -47,12 +47,13 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="input-group">           
-                            <input id="autocomplete" type="text" class="form-control" placeholder="Location">
+                            <input id="autocomplete" type="text" class="form-control" placeholder="Resort">
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="input-group">           
-                            <input id="start_date" type="date" class="form-control" value="Check-In">
+                            <input id="start_date" type="date" class="form-control">
+                            <button id="submit">Submit</button>
                         </div>
                     </div>
                     <div class="col-lg-3">
