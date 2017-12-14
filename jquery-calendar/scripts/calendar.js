@@ -6,6 +6,49 @@ jQuery(document).ready(function($){
 
   
     //For each link in the calendar...
+     $("#submit").click( function() {
+          var date =  $("#start_date").val();
+    var startDate = JSON.stringify(date);
+    var resort =  $("#autocomplete").val();
+    if(resort!="") {
+    var resortName = JSON.stringify(resort);
+    $.ajax(url_base + "searchResort.php",
+          {type: "GET",
+          dataType: "json",
+          data: { start : startDate, resort : resortName },
+          success: function(data) {
+              $("#output").html("");
+              $("#output").append("Ticket available on " + date + " at " + resort + "<br>");
+              for (var i=0; i<data.length; i++) {
+                  console.log(data[i]);
+                  $("#output").append("$" + data[i].price + " "); 
+              }
+                
+          }
+              
+          }
+          );
+    } else {
+        var startDate = JSON.stringify(date);
+    $.ajax(url_base + "searchDate.php",
+          {type: "GET",
+          dataType: "json",
+          data: { start : startDate },
+          success: function(data) {
+              $("#output").html("");
+              $("#output").append("Tickets available on " + date + "<br>");
+              for (var i=0; i<data.length; i++) {
+                  console.log(data[i]);
+                  $("#output").append(data[i].rid + " ");
+                  $("#output").append("$" + data[i].price + " "); 
+              }
+                
+          }
+              
+          }
+          );
+    }
+        });
     
         var monthArray = ["January","February","March","April","May","June","July","August","September","October","November","December"];
         var month = 12;
