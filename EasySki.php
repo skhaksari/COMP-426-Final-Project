@@ -5,12 +5,13 @@
             EasySki
         </title>
         <style type="text/css" media="screen">#calendar-events{ display: none; }</style>
+        
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <link rel="stylesheet" href="EasySki.css">
-        <script src="EasySki.js"></script>
+<!--        <script src="EasySki.js"></script>-->
         <script src="jquery-calendar/scripts/calendar.js"></script>
     </head>
     <body>
@@ -37,23 +38,23 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <a class="btn btn-primary" href="Login.php">Log In</a>
+                    <a class="btn btn-primary" href="users/Login.php">Log In</a>
                 </form>
             </div>
         </nav>
         <!-- Display Resorts and Narrow Down -->
         <div class="row">
             <div class="container">
-                <div class="row">
+                <div class="row search">
                     <div class="col-lg-3">
-                        <div class="input-group">           
-                            <input id="autocomplete" type="text" class="form-control" placeholder="Resort">
+                        <div class="input-group">   
+                            <input id="autocomplete" type="text" class="form-control" style="margin-left: 20px;" placeholder="Resort">
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="input-group">           
-                            <input id="start_date" type="date" class="form-control">
-                            <button id="submit">Submit</button>
+                            <input id="start_date" type="date" class="form-control" style="margin-left: -9px;">
+                            <button id="submit" class="btn btn-primary">Search</button>
                         </div>
                     </div>
                     <div class="col-lg-3">
@@ -62,125 +63,23 @@
                 </div>
             </div>
             <div class="col-lg-5" id="resort_display">
-            <div class="row">
-            <div class="col-sm-4">
-                <div class="card">
-                    <div class="card-header">
-                       <button class="btn btn-primary-outline" id="favorite">&#x2606;</button>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-title"></p>
-                        <p class="card-text"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4" offset="">
-                <div class="card">
-                    <div class="card-header">
-                        <button class="btn btn-primary-outline" id="favorite">&#x2606;</button>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-title"></p>
-                        <p class="card-text"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4" offset="">
-                <div class="card">
-                    <div class="card-header">
-                        <button class="btn btn-primary-outline" id="favorite">&#x2606;</button>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-title"></p>
-                        <p class="card-text"></p>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-sm-4">
-                <div class="card">
-                    <div class="card-header">
-                        <button class="btn btn-primary-outline" id="favorite">&#x2606;</button>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-title"></p>
-                        <p class="card-text"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4" offset="">
-                <div class="card">
-                    <div class="card-header">
-                        <button class="btn btn-primary-outline" id="favorite">&#x2606;</button>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-title"></p>
-                        <p class="card-text"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4" offset="">
-                <div class="card">
-                    <div class="card-header">
-                        <button class="btn btn-primary-outline" id="favorite">&#x2606;</button>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-title"></p>
-                        <p class="card-text"></p>
-                    </div>
-                </div>
-            </div>
-            </div>
-                <div class="row">
-            <div class="col-sm-4">
-                <div class="card">
-                    <div class="card-header">
-                        <button class="btn btn-primary-outline" id="favorite">&#x2606;</button>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-title"></p>
-                        <p class="card-text"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4" offset="">
-                <div class="card">
-                    <div class="card-header">
-                        <button class="btn btn-primary-outline" id="favorite">&#x2606;</button>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-title"></p>
-                        <p class="card-text"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4" offset="">
-                <div class="card">
-                    <div class="card-header">
-                        <button class="btn btn-primary-outline" id="favorite">&#x2606;</button>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-title"></p>
-                        <p class="card-text"></p>
-                    </div>
-                </div>
-            </div>
-            </div>
+            
             </div>
         
-        <div class="col lg-5 offset ">
-            <div id="dayHeading"><h2></h2></div>
+        <div class="col-lg-5 offset ">
+            <div class="row">
+            <button class="btn btn-primary-outline arrow" id="previousMonth" style="margin-left: 280px; font-size: 30px; margin-top: -25px;">&lt;</button>
+            <h2 id="dayHeading"></h2>
+            <button class="btn btn-primary-outline arrow"  id="nextMonth" style="font-size: 30px; margin-top: -25px;">&gt;</button>
+            </div >
             <p></p>
-            <button class="btn btn-primary-outline" id="previousMonth">Previous Month</button>
-            <button class="btn btn-primary-outline"  id="nextMonth">Next Month</button>
             <div id="calendar"></div>
             <div id="calendar-events"></div>
             <div id="output"></div>
-            <iframe src="https://www.google.com/maps/d/embed?mid=1LtgLYclPJ1onQFSyNLP7Rf-lijW41Snw" width="450" height="450"></iframe>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1LtgLYclPJ1onQFSyNLP7Rf-lijW41Snw" width="660" height="450" class="map"></iframe>
         </div>
         </div>
-        <div id="price_div">Price Div</div>
+        <div id="price_div">THIS IS PRICE DIV</div>
         <!-- Modal Box for Login/Signup -->
         <div class="modal fade" id="signInFloat" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
