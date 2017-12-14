@@ -6,15 +6,15 @@ jQuery(document).ready(function($){
 
     var ui_price_display = $("<div class='price_display'>Price Display</div>");
     $(price_div).append(ui_price_display);
-
-    var priceUpdate = function(tickets) {
+    
+var priceUpdate = function(tickets) {
         ui_price_display.empty();
         for (var i=0; i<tickets.length; i++) {
             console.log(tickets[i]);
             console.log(tickets[i].tid);
-            $(ui_price_display).append($("<div class='resorts "+tickets[i].rid+"'>"+tickets[i].rid+"<br>$"+tickets[i].price+"<br>"+tickets[i].tid+"</div>"));
+            $(ui_price_display).append($("<div id='"+tickets[i].tid+"' class='resorts "+tickets[i].rid+"'>"+tickets[i].rid+"<br>$"+tickets[i].price+"<br>"+tickets[i].tid+"</div>"));
         }
-        $(price_div).append(ui_price_display);
+        
     }
   
     //For each link in the calendar...
